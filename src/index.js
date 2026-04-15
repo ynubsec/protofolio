@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
       // Remove from DOM after transition completes
       setTimeout(() => {
         intro.remove();
-      }, 800);
+      }, 700);
     }, 1200);
   }
 });
