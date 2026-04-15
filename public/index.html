@@ -23,10 +23,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet" />
 
   <!-- ICONS -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- OPEN GRAPH -->
@@ -88,7 +89,7 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: opacity 1.2s ease, visibility 1.2s;
+      transition: opacity 0.7s ease, visibility 0.7s;
     }
 
     #app-intro.ready-to-fade {
@@ -395,7 +396,7 @@
         intro.style.display = 'none';
         document.body.classList.remove('intro-active');
       }
-    }, 5000);
+    }, 3000);
 
     // Error logging to screen
     window.onerror = function (msg, url, lineNo, columnNo, error) {

@@ -15,16 +15,16 @@ root.render(
 window.addEventListener('load', () => {
   const intro = document.getElementById('app-intro');
   if (intro) {
-    // Hold the intro for 2 seconds (faster load)
+    // Hold the intro for 1.2 seconds (faster load)
     setTimeout(() => {
       intro.classList.add('ready-to-fade');
       document.body.classList.remove('intro-active');
 
-      // Remove from DOM after transition completes (matching CSS 1.5s is fine, or reduce CSS if needed)
+      // Remove from DOM after transition completes
       setTimeout(() => {
         intro.remove();
-      }, 1500);
-    }, 2000);
+      }, 800);
+    }, 1200);
   }
 });
 

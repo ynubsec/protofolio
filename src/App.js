@@ -1,23 +1,26 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 
+// Eagerly loaded — needed on first paint
 import Hero from './components/hero.js';
 import About from './components/about.js';
-import Pro from './components/navs/project.js';
-import Skills from './components/navs/skills.js';
 import Footer from './components/footer.js';
 import Nav from './components/navbar.js';
 import QuickNav from './components/QuickNav.js';
-import Contact from './components/Contact.js';
-import { Privacy, Terms } from './pages';
-import ProfileCard from './components/ProfileCard';
-import './App.css';
-import Photos from "./components/photos.js";
-import Reviews from "./components/reviews.js";
-import NotFound from "./page-not-found.js";
-
 import bg from "./medias/bmw.jpg";
+import './App.css';
+
+// Lazy loaded — only fetched when the user navigates to that route
+const Pro = lazy(() => import('./components/navs/project.js'));
+const Skills = lazy(() => import('./components/navs/skills.js'));
+const Contact = lazy(() => import('./components/Contact.js'));
+const Privacy = lazy(() => import('./pages').then(m => ({ default: m.Privacy })));
+const Terms = lazy(() => import('./pages').then(m => ({ default: m.Terms })));
+const ProfileCard = lazy(() => import('./components/ProfileCard'));
+const Photos = lazy(() => import('./components/photos.js'));
+const Reviews = lazy(() => import('./components/reviews.js'));
+const NotFound = lazy(() => import('./page-not-found.js'));
 
 
 function ScrollToHash() {
@@ -107,21 +110,21 @@ function App() {
 
       <div className="root">
         <Nav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<Pro />} />
-        <Route path="/skills" element={<SkillsPage />} />
-
-        <Route path="/gallary" element={<GalleryPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-          <Route path="/card" element={<ProfileCard />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-
+        <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<Pro />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/gallary" element={<GalleryPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/card" element={<ProfileCard />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </div>
     </HashRouter>
   );
