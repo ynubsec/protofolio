@@ -44,6 +44,7 @@ export default function ContactForm() {
           placeholder="Your Email"
           className="footer-input"
           required
+
         />
       </p>
       <p className="footer-contact-item">
