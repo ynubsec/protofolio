@@ -17,12 +17,12 @@ function Hero() {
   const [views, setViews] = useState('...');
 
   useEffect(() => {
-    // Using counterapi.dev as countapi.xyz is unstable
-    fetch('https://api.counterapi.dev/v1/ynubsec/portfolio/up')
+    // Using abacus.jasoncameron.dev API as counterapi.dev is offline
+    fetch('https://abacus.jasoncameron.dev/hit/ynubsec/portfolio')
       .then(res => res.json())
       .then(data => {
         console.log('View count response:', data);
-        setViews(data.count);
+        setViews(data.value);
       })
       .catch(err => {
         console.error('Error fetching view count:', err);
