@@ -51,7 +51,7 @@ function Nav() {
         <li className="nav-item">
           <Link to="/contact" className="nav-link">
             <i className="fa-solid fa-envelope"></i>
-            <span>CONTACT</span>
+            <span> CONTACT</span>
           </Link>
         </li>
       </ul>
