@@ -28,26 +28,26 @@ function Photos() {
       <h2>Photo Gallery</h2>
 
       <div className="photo-list">
-        <img src={image3} alt="Portrait 1" />
-        <img src={logo} alt="Brand mark" />
-        <img src={image4} alt="Portrait 2" />
-        <img src={pic} alt="Profile illustration" />
-        <img src={image2} alt="Portrait 3" />
-        <img src={image1} alt="Portrait 4" />
-        <img src={profile} alt="Professional profile" />
-        <img src={image5} alt="Portrait 5" />
-        <img src={image6} alt="Portrait 6" />
-        <img src={image7} alt="Portrait 7" />
-        <img src={image8} alt="Portrait 8" />
-        <img src={image9} alt="Portrait 9" />
-        <img src={image10} alt="Portrait 10" />
-        <img src={image11} alt="Portrait 11" />
-        <img src={image12} alt="Portrait 12" />
-        <img src={image13} alt="Portrait 13" />
-        <img src={image14} alt="Portrait 14" />
-        <img src={image15} alt="Portrait 15" />
-        <img src={image16} alt="Portrait 16" />
-        <img src={image17} alt="Portrait 17" />
+        <img src={image3} alt="Portrait 1" loading="lazy" />
+        <img src={logo} alt="Brand mark" loading="lazy" />
+        <img src={image4} alt="Portrait 2" loading="lazy" />
+        <img src={pic} alt="Profile illustration" loading="lazy" />
+        <img src={image2} alt="Portrait 3" loading="lazy" />
+        <img src={image1} alt="Portrait 4" loading="lazy" />
+        <img src={profile} alt="Professional profile" loading="lazy" />
+        <img src={image5} alt="Portrait 5" loading="lazy" />
+        <img src={image6} alt="Portrait 6" loading="lazy" />
+        <img src={image7} alt="Portrait 7" loading="lazy" />
+        <img src={image8} alt="Portrait 8" loading="lazy" />
+        <img src={image9} alt="Portrait 9" loading="lazy" />
+        <img src={image10} alt="Portrait 10" loading="lazy" />
+        <img src={image11} alt="Portrait 11" loading="lazy" />
+        <img src={image12} alt="Portrait 12" loading="lazy" />
+        <img src={image13} alt="Portrait 13" loading="lazy" />
+        <img src={image14} alt="Portrait 14" loading="lazy" />
+        <img src={image15} alt="Portrait 15" loading="lazy" />
+        <img src={image16} alt="Portrait 16" loading="lazy" />
+        <img src={image17} alt="Portrait 17" loading="lazy" />
       </div>
     </div>
   );
